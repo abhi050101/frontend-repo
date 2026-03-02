@@ -167,8 +167,8 @@ for (const [key, value] of Object.entries(progLangs)) {
     console.log(key, "=>", value)
 }
 
-langArr.forEach((lang) => {   // callback function approach 1
-    console.log(lang)
+langArr.forEach((lang, index, arr) => {   // callback function approach 1... we have access to the current element, index and the entire array in the callback function of forEach method.
+    console.log(lang, index, arr)
 })
 
 langArr.forEach( function (item) {   // callback function approach 2
@@ -180,3 +180,27 @@ function consoleMe(item) {
 }
 
 langArr.forEach(consoleMe)    // callback function approach 3... we can directly pass the function reference without invoking it because forEach will invoke it for each element in the array. if we invoke it like consoleMe(), it will execute immediately and not work as a callback function.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const evenNumbers = numbers.filter( num => num % 2 === 0 ) // if you used scope with {} explicit return would be required, but with implicit return we do not need to use return keyword because the expression is evaluated and returned automatically.
+const modifiedNumbers = numbers.map( num => num ** 2 )
+
+console.table( {numbers: numbers, evens: evenNumbers, squares: modifiedNumbers} )  // chaining can be used as well for filter and map.
+
+const initialValue = 0
+const sumOfArray = numbers.reduce(
+    (acc, presentValue) => acc + presentValue,
+    initialValue  // only passed once, as the second argument to reduce method, and it is used as the initial value of the accumulator (acc) in the first iteration. if we do not pass initialValue, then the first element of the array will be used as the initial value of acc and the iteration will start from the second element.
+)
+
+/*
+const sumOfArray2 = numbers.reduce(
+    function (acc, currVal) {
+        console.log(`accumulator: ${acc} and current value: ${currVal}`)
+        return acc + currVal
+    }, 0 // initial value
+)
+*/
+
+console.log(sumOfArray)
