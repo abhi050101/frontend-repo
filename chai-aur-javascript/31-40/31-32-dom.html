@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM learning</title>
+    <style>
+        .bg-black {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM concepts with Hitesh sir!</h1>
+        <p>Lorem ipsum dolar sir amet.</p>
+        <style>
+
+        </style>
+    </div>
+</body>
+</html>
+
+/* 
+   span is used for inline elements, while div is used for block-level elements. 
+   so if you style a spanned text with display: none, innerText hides it but textContent displays it all; innerHTML displays tags as well.
+   Array.from(item) where item can be a collection, nodelist, etc. It converts it into an array, so that we can use array methods on it.
+   HTMLCollection is live hence we convert using Array.from() and work on that snapshot of the collection, while NodeList is static and does not change when the DOM changes.
+*/

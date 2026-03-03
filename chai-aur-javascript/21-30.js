@@ -204,3 +204,5 @@ const sumOfArray2 = numbers.reduce(
 */
 
 console.log(sumOfArray)
+
+progLangs.hello; // no such property exists in the proLangs object, still no error in javascript; hence we go with typescript. hasOwnProperty can be used to check if a property exists in an object or not. it returns true if the object has the specified property as its own property (not inherited), and false otherwise. we can also use Object.hasOwn() method which is a more modern approach to check for own properties of an object. it takes the object and the property name as arguments and returns true if the object has the specified property as its own property, and false otherwise.
