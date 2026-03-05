@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #press1, #press2, #press3 {
+            width: 100px;
+            height: 50px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h2>Amazing button</h2>
+    <ul id="out">
+        <li><input type="button" id="press1" value="submit"></li>
+        <li><input type="button" id="press2" value="okay"></li>
+        <li><a href="https://www.google.com">
+            <button id="press3">Google</button>
+        </a></li>
+    </ul>
+    <script>
+        /* learn by yourself
+        type, timestamp, defaultPrevented, preventDefault
+        target, toElement, srcElement, currentTarget,
+        clientX, clientY, screenX, screenY
+        altkey, ctrlkey, shiftkey, keyCode
+        */
+
+        // Types of Event Propagation ===> 1) Event Bubbling (most common) default is false => goes from inside to outside; 2) Event Capturing => outside to inside.
+        // document.getElementById('out').addEventListener('click', (event) => {
+        //     console.log("ul clicked");
+        // }, false) // event bubbling
+
+        // document.getElementById('press2').addEventListener('click', (event) => {
+        //     console.log("okay clicked");
+        //     event.stopPropagation()  // does not bubble up the order.
+        // }, false)
+
+        // document.querySelector('#press3').addEventListener('click', (event) => {
+        //     console.log("Google button clicked!");
+        //     event.preventDefault();
+        //     event.stopPropagation();
+        // }, false)
+
+        document.querySelector('#out').addEventListener('click', (event) => {
+            console.log(event.target.parentNode);
+            
+            if(event.target.tagName === 'INPUT'){ // to avoid event spill over
+                const removeIt = event.target.parentNode;
+                removeIt.parentNode.removeChild(removeIt);
+            }
+            // removeIt.remove();
+        }, false)
+    </script>
+</body>
+</html>

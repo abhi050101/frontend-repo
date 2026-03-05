@@ -1,0 +1,12 @@
+Javascript is by default: 
+1) synchronous 
+2) single-threaded 
+
+works great in a runtime environment like NodeJS, browser, DenoJS.
+
+NodeJS does not have DOM API; Web API i.e. browser has it.
+JS Engine and entire architecture for async and sync behaviour. (ref: chai aur js at 11:30)
+
+Task queue makes async thing fast in javascript.
+
+set timeout, set interval.
